@@ -6,7 +6,7 @@ import level2 from './level2'
 import level3 from './level3'
 
 // level3()
-// level2()
+level2()
 level1()
 
 window.test = test
