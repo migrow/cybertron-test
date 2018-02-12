@@ -80,6 +80,11 @@ export default function() {
       filter(price => price === 40000),
       map(car => car.salesPrice)
     )(cars)
+    // Here's a way to do it without using filter or hard coding in the price, because that way sucks:
+    // return compose(
+    //   reduce((acc, price) => (price > acc ? price : acc), 0),
+    //   map(car => car.salesPrice)
+    // )(cars)
   }
 
   const ex5 = `Use map to transform the salesPrice to USD currency format (ex: $400,000.00)
