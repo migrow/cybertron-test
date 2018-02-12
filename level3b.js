@@ -76,15 +76,10 @@ export default function() {
     'Use map, filter and reduce with compose to return the price of the the most expensive car from the 2000s '
   const exercise4 = _ => {
     return compose(
-      reduce((acc, price) => price, ''),
-      filter(price => price === 40000),
-      map(car => car.salesPrice)
+      reduce((acc, price) => (price > acc ? price : acc), 0),
+      map(car => car.salesPrice),
+      filter(car => car.year > 1999)
     )(cars)
-    // Here's a way to do it without using filter or hard coding in the price, because that way sucks:
-    // return compose(
-    //   reduce((acc, price) => (price > acc ? price : acc), 0),
-    //   map(car => car.salesPrice)
-    // )(cars)
   }
 
   const ex5 = `Use map to transform the salesPrice to USD currency format (ex: $400,000.00)
